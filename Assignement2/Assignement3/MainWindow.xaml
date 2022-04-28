@@ -1,0 +1,21 @@
+﻿<Window x:Class="Assignement3.MainWindow"		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"		xmlns:local="clr-namespace:Assignement3"		mc:Ignorable="d"		xmlns:vms="clr-namespace:Assignement3.ViewModels"		xmlns:views="clr-namespace:Assignement3.Views"		Title="OpenLoginWindow" Height="450" Width="800"        WindowStartupLocation="CenterScreen">    <Window.DataContext>        <vms:MainWindowViewModel/>    </Window.DataContext>    <Window.Resources>        <!--Converter-->        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>        <!--DataTemplate-->        <DataTemplate DataType="{x:Type vms:PersonListViewModel}">            <views:PersonListView />        </DataTemplate>        <!--Style-->        <Style TargetType = "Button">
+            <Setter Property = "Height" Value = "40" />
+            <Setter Property = "Foreground" Value = "Blue" />
+            <Setter Property = "FontSize" Value = "14" />
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property = "Margin" Value = "10" />
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="MinWidth" Value="100"/>
+        </Style>    </Window.Resources>    <Grid>        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Click to open dialog windows" FontSize="24" FontWeight="Bold" Margin="10" Grid.Row="0" HorizontalAlignment="Center" Padding="5"/>
+                <Button Content="Alert" Margin="10" HorizontalAlignment="Center" Command="{Binding OpenAlertDialogCommand}"/>
+                <Button Content="YesNo" Margin="10" HorizontalAlignment="Center" Command="{Binding OpenYesNoDialogCommand}"/>
+                <Button Content="Modal Login" Margin="10" HorizontalAlignment="Center" Command="{Binding OpenModalLoginDialogCommand}"/>
+            </StackPanel>
+
+        </Grid>        <Grid Grid.Row="1">            <ContentControl Content="{Binding CurrentViewModel}"/>        </Grid>    </Grid></Window>

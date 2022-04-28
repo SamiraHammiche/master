@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\PersonListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DialogWindows\AlertDialog\AlertDialogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DialogWindows\LoginDialog\LoginDialogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DialogWindows\YesNoDialog\YesNoDialogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DialogServices\DialogWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DialogWindows\AddEditPersonDialog\AddEditPersonView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\PersonListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DialogWindows\AlertDialog\AlertDialogView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DialogWindows\LoginDialog\LoginDialogView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DialogWindows\YesNoDialog\YesNoDialogView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DialogServices\DialogWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DialogWindows\AddEditPersonDialog\AddEditPersonView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

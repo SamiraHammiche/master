@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Assignement3.Views.AddEditPersonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Assignement3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--First name & last name-->
+        <Label Content="First and Last Name" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Text="{Binding PersonName}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="5" Width="200"/>
+        
+        <!--About section -->
+        <Label Content="About" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Text="{Binding AboutInformation}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5" Width="200"/>
+        
+        <!--Gender-->
+        <Label Content="Gender" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="5"/>
+        <ComboBox ItemsSource="{Binding GenderList}" 
+                  Text="Select gender"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectedItem="{Binding SelectedGender,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="5" Width="200"/>
+        
+        <!--BirthDate-->
+        <Label Content="Birth Date" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="5" />
+        <DatePicker SelectedDate="{Binding DateOfBirth}" 
+                    
+                    Grid.Row="3" Grid.Column="1" 
+                    HorizontalAlignment="Left" Margin="5" Width="200"/>
+        
+        <!--Button section -->
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Add" Command="{Binding AddPersonCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                    Margin="5" FontSize="14" Padding="5" Width="100"/>
+            <Button Content="Reset" Command="{Binding ResetCommand}" Margin="5" FontSize="14" Padding="5" Width="100"/>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

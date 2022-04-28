@@ -1,0 +1,44 @@
+﻿<Window x:Class="Assignement2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignement2"
+        mc:Ignorable="d"
+        Title="WPF Training 2" Height="450" Width="800" FontSize="20"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Switch a list item to another" FontSize="24" FontWeight="Bold" Margin="5"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Add" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ListBox Grid.Column ="1" Margin="10" ItemsSource="{Binding ListA}" SelectedItem="{Binding SelectedItemA, UpdateSourceTrigger=PropertyChanged}" >
+              
+            </ListBox>
+
+            <StackPanel Orientation="Vertical" Grid.Column="2" VerticalAlignment="Center">
+                <Button Content="Move to right" Margin="10" Command="{Binding MoveAToBCommand}"/>
+                <Button Content="Move to left" Margin="10" Command="{Binding MoveBToACommand}"/>
+            </StackPanel>
+
+            <ListBox Grid.Column ="3" Margin="10" ItemsSource="{Binding ListB}" SelectedItem="{Binding SelectedItemB, UpdateSourceTrigger=PropertyChanged}" >
+                
+            </ListBox>
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>

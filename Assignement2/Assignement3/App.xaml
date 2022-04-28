@@ -1,0 +1,25 @@
+﻿<Application x:Class="Assignement3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Assignement3"
+             xmlns:alert="clr-namespace:Assignement3.AlertDialog"
+             xmlns:yesno="clr-namespace:Assignement3.DialogWindows.YesNoDialog"
+             xmlns:dialog="clr-namespace:Assignement3.DialogWindows.LoginDialog"
+             xmlns:views="clr-namespace:Assignement3.Views"
+             xmlns:vms="clr-namespace:Assignement3.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type alert:AlertDialogViewModel}">
+            <alert:AlertDialogView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type yesno:YesNoDialogViewModel}">
+            <yesno:YesNoDialogView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type dialog:LoginDialogViewModel}">
+            <dialog:LoginDialogView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:AddEditPersonViewModel}">
+            <views:AddEditPersonView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
