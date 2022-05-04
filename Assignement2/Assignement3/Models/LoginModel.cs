@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Assignement3.Models
+﻿namespace Assignement3.Models
 {
     public class LoginModel
     {

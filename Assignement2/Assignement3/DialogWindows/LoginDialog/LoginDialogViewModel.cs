@@ -54,8 +54,6 @@ namespace Assignement3.DialogWindows.LoginDialog
 
         }
 
-       
-
         private bool CanExcecuteLogin(IDialogWindow arg)
         {
             return !string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password);

@@ -1,9 +1,8 @@
 ﻿using Assignement3.Commands;
 using Assignement3.DialogServices;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Windows.Input;
 
 namespace Assignement3.ViewModels
@@ -100,7 +99,7 @@ namespace Assignement3.ViewModels
                 "Female"
             };
 
-            PersonName = person.PersoneName;
+            PersonName = person.PersonName;
             AboutInformation = person.AboutInformation;
             SelectedGender = person.Gender;
             DateOfBirth = person.DateOfBirth;
@@ -112,7 +111,7 @@ namespace Assignement3.ViewModels
         private void OnAddCommand(IDialogWindow dialogWindow)
         {
             PersonViewModel addedPerson = new PersonViewModel();
-            addedPerson.PersoneName = PersonName;
+            addedPerson.PersonName = PersonName;
             addedPerson.Gender = SelectedGender;
             addedPerson.AboutInformation = AboutInformation;
             addedPerson.DateOfBirth = DateOfBirth;
@@ -132,7 +131,7 @@ namespace Assignement3.ViewModels
         private void OnEditCommand(IDialogWindow dialogWindow)
         {
             PersonViewModel updatePerson = new PersonViewModel();
-            updatePerson.PersoneName = PersonName;
+            updatePerson.PersonName = PersonName;
             updatePerson.Gender = SelectedGender;
             updatePerson.AboutInformation = AboutInformation;
             updatePerson.DateOfBirth = DateOfBirth;
@@ -149,5 +148,80 @@ namespace Assignement3.ViewModels
             AboutInformation = string.Empty;
             DateOfBirth = DateTime.Today;
         }
+
+
+     
+       
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public interface ITestClass
+        {
+            string Property { get; set; }
+            string Property2 { get; set; }
+        }
+
+        public abstract class TestClassBase
+        {
+            public  string Property { get; set; }
+
+            public string Property2 { get; set; }
+
+            protected static int Double(int number)
+            {
+                return number + number;
+            }
+
+            protected static int square(int number)
+            {
+                return number * number;
+            }
+        }
+
+        public class TestClass : TestClassBase, ITestClass
+        {
+            private int id;
+
+            private TestClass(int id, string property, string property2)
+            {
+                this.id = id;
+                Property = property;
+                Property2 = property2;
+
+                try
+                {
+
+                }
+                catch (Exception e)
+                {
+                    
+                }
+
+                try
+                {
+                    int number = 4;
+                    int cube = square(number) * number;
+                    int triple = Double(number) + number;
+
+                }
+                finally
+                {
+                    
+                }
+            }
+
+            public static TestClass OnCreateInstance(int id, string property, string property2)
+            {
+                return new TestClass(id, property, property2);
+            }
+
+            public string Property { get; set; }
+        }
+
+      
+        
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Assignement3.ViewModels
 {
@@ -9,13 +7,13 @@ namespace Assignement3.ViewModels
 
         private string personName;
 
-        public string PersoneName
+        public string PersonName
         {
             get { return personName; }
             set
             {
                 personName = value;
-                OnPropertyChanged(nameof(PersoneName));
+                OnPropertyChanged(nameof(PersonName));
             }
         }
 

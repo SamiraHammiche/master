@@ -1,11 +1,33 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Assignement2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Assignement2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assignement2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Assignement2/1.0.0": {
+      "type": "project",
+      "path": "../Assignement2/Assignement2.csproj",
+      "msbuildProject": "../Assignement2/Assignement2.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Assignement2 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\samira.hammiche\\.nuget\\packages\\": {}
@@ -13,11 +35,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\Assignement2\\Assignement2.csproj",
-      "projectName": "Assignement2",
-      "projectPath": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\Assignement2\\Assignement2.csproj",
+      "projectUniqueName": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\AssignemntTest\\AssignemntTest.csproj",
+      "projectName": "AssignemntTest",
+      "projectPath": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\AssignemntTest\\AssignemntTest.csproj",
       "packagesPath": "C:\\Users\\samira.hammiche\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\Assignement2\\obj\\",
+      "outputPath": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\AssignemntTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\samira.hammiche\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +55,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\Assignement2\\Assignement2.csproj": {
+              "projectPath": "C:\\Users\\samira.hammiche\\Documents\\master\\Assignement2\\Assignement2\\Assignement2.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

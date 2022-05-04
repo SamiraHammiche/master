@@ -1,10 +1,7 @@
 ﻿using Assignement3.Commands;
 using Assignement3.DialogServices;
-using Assignement3.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows.Input;
 using System.Windows.Threading;
 using System.Linq;
@@ -128,21 +125,21 @@ namespace Assignement3.ViewModels
 
         private void OnDeletePerson(PersonViewModel person)
         {
-            var personToDelete = PersonList.First(x => x.PersoneName.Equals(person.PersoneName));
+            var personToDelete = PersonList.First(x => x.PersonName.Equals(person.PersonName));
             PersonList.Remove(person);
         }
 
         private void OnEditPerson(PersonViewModel person)
         {
-            //var personToUpdate = PersonList.First(x => x.PersoneName.Equals(person.PersoneName));
+            //var personToUpdate = PersonList.First(x => x.PersonName.Equals(person.PersonName));
             var modalDialog = new AddEditPersonViewModel(person, "Edit a person", string.Empty);
             var result = dialogService.OpenDialog(modalDialog);
 
             // should return PersonViewModel
             PersonViewModel updateddPerson = result;
 
-            var existingPerson = PersonList.First(x => x.PersoneName.Equals(person.PersoneName));
-            existingPerson.PersoneName = updateddPerson.PersoneName;
+            var existingPerson = PersonList.First(x => x.PersonName.Equals(person.PersonName));
+            existingPerson.PersonName = updateddPerson.PersonName;
             existingPerson.AboutInformation = updateddPerson.AboutInformation;
             existingPerson.DateOfBirth = updateddPerson.DateOfBirth;
             existingPerson.Gender = updateddPerson.Gender;
@@ -155,7 +152,7 @@ namespace Assignement3.ViewModels
             {
                 foreach (var person in PersonList)
                 {
-                    if (!person.PersoneName.Equals(selectedPerson.PersoneName))
+                    if (!person.PersonName.Equals(selectedPerson.PersonName))
                     {
                         person.IsSelected = false;
                     }

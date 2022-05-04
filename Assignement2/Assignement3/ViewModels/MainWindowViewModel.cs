@@ -1,12 +1,10 @@
-﻿using Assignement3.AlertDialog;
+﻿using System.Collections.Generic;
+using System.Windows.Documents;
+using Assignement3.AlertDialog;
 using Assignement3.Commands;
 using Assignement3.DialogWindows.LoginDialog;
 using Assignement3.DialogWindows.YesNoDialog;
 using Assignement3.DialogServices;
-using System;
-using System.Windows.Threading;
-using System.Windows.Input;
-using System.Collections.ObjectModel;
 
 namespace Assignement3.ViewModels
 {
@@ -59,13 +57,23 @@ namespace Assignement3.ViewModels
 
         }
 
+     
         private void OnOpenYesNoDialog()
         {
+            
             var yesNoDialog = new YesNoDialogViewModel("Yes No Dialog", "This is a dialog with Yes, No buttons");
             var result = dialogService.OpenDialog(yesNoDialog);
 
             // should return Yes or No
             var dialogResult = result;
+
+            
+
+            // var liststrin = new List<string>();
+            List<string> list = new List<string>
+            {
+               Capacity = 0
+            };
         }
 
         private void OnOpenModalLoginDialog()
